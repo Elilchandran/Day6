@@ -1,0 +1,387 @@
+(https://medium.com/@reach2arunprakash/guvi-zen-class-find-the-culprits-and-nail-them-9ee6c67c44fb)         
+
+           1.Find the culprit 
+1.1.fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script>
+ alert( "I'm JavaScript!");//found the culprit 
+ </script>
+</body>
+</html
+
+          2.Find the culprit and invoke the alert
+2.1.fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+2.2.scripts.js
+alert("I’m invoked!");
+
+          3.Explain the below how it works
+
+3.1.explain.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+
+3.2.script.js
+alert("I'm JavaScript!");
+alert('Hello') // this line is not having semicolon
+alert(`Wor
+ld`);
+alert(3
++1
++ 2); // this is multiple line code and it's working
+
+<!--The code in  3.1 explain.html and 3.2 script.js creates a simple HTML page that loads a JavaScript file (script.js). When the page is loaded in a browser, the JavaScript code is executed.
+
+The JavaScript code in script.js contains four alert statements that display messages in a pop-up dialog box in the browser.
+
+The first alert statement displays the string "I'm JavaScript!".
+
+The second alert statement displays the string "Hello". Although the line of code is missing a semicolon at the end, JavaScript is able to interpret the statement correctly since it is a single statement on one line.
+
+The third alert statement displays the string "Wor ld". The string is split over two lines, but JavaScript is able to concatenate them into a single string because they are enclosed in backticks (``).
+
+The fourth alert statement displays the number 6. Although the statement is written on multiple lines, JavaScript is able to interpret it correctly because the addition operation 3 + 1 + 2 spans across all three lines, making it a single statement.-->
+
+          4.Fix the below to alert "Guvi geek"
+
+4.1.fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+
+4.2.script.js
+let admin = 9, fname = 10.5;
+fname = "Guvi";
+let lname = "geek";
+admin = fname + " " + lname;
+alert(admin); // "Guvi geek"
+
+
+
+            4.Fix the below to alert "hello Guvi geek"
+4.1.fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+
+4.2.script.js
+let fname = 10.5;
+fname = "Guvi";
+let lname = "geek";
+let name = fname + " " + lname;
+alert(`hello ${name}`);
+
+
+            5.Fix the below to alert sum of two number
+
+5.1.fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+
+5.2.script.js
+let a = prompt("First number?");
+let b = prompt("Second number?");
+alert(parseInt(a) + parseInt(b));
+
+
+
+           6.If you run the below script you will get “Code is Blasted”
+
+6.1.fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+
+
+6.2.script.js
+var a = parseInt("2") > parseInt("12");
+if (a) {
+console.log("Code is Blasted")
+}
+else {
+console.log("Diffused")
+}
+
+
+
+          7.How to get the success in console.
+
+7.1.fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+
+7.2.script.js
+let a = prompt("Enter a number?");
+if (!isNaN(a)) {
+console.log( 'OMG it works for any number inc 0' );
+}
+else
+{
+console.log( "Success" );
+}
+
+
+          8.How to get the correct score in console.
+
+8.1.fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+
+8.2.script.js
+let value = prompt('How many runs you scored in this ball');
+let score = parseInt(value);
+
+if (score === 4) {
+  console.log("You hit a Four");
+} else if (score === 6) {
+  console.log("You hit a Six");
+} else {
+  console.log("I couldn't figure out");
+}
+
+
+        9.Fix the code to welcome the Employee:
+
+9.1.fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+
+
+9.2.script.js:
+let login = 'Employee';
+let message = (login == 'Employee') ? 'Welcome' :
+  (login == 'Director') ? 'Greetings' :
+  (login == '') ? 'No login' :
+  '';
+console.log(message);
+
+
+       10.Fix the code to welcome the boss:
+
+10.1.fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+
+10.2.script.js:
+let message;
+if (null || 2 || undefined) {
+  message = "welcome boss";
+} else {
+  message = "Go away";
+}
+console.log(message);
+
+
+         11.Code to welcome the boss
+
+11.1.fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+
+11.2.script.js:
+let message;
+let lock = 2;
+if (lock) {
+  message = "welcome boss";
+} else {
+  message = "Go away";
+}
+console.log(message);
+
+
+
+              12.Fix the code to welcome the boss:
+
+12.1.fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+
+12.2.script.js:
+let message;
+let lock = 2;
+if (lock) {
+  message = "welcome boss";
+} else {
+ message = "Go away";
+}
+console.log(message);
+
+
+               13.Change the code to print 3 2 1:
+
+13.1.fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+
+13.2.script.js:
+let i = 3;
+while (i) {
+  console.log(i--);
+}
+
+
+
+              14.Change the code to print 1 to 10 in 4 lines:
+
+14.1.fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+
+14.2.script.js:
+for (let i = 1; i <= 10; i++) {
+  console.log(i);
+}
+
+
+
+              15.Change the code to print even numbers:
+
+15.1.fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+
+15.2.script.js:
+for (let num = 2; num <= 20; num += 2) {
+console.log(num)
+}
+
+
+             16.Change the code to print all the gifts:
+
+16.1.fix.html:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+
+16.2.script.js:
+
+let gifts = ["teddy bear", "drone", "doll"];
+for (let i = 0; i < 3; i++) {
+  console.log(`Wrapped ${gifts[i]} and added a bow!`);
+}
+
+
+            17.code to disarm the bomb.
+          
+
+17.1.fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+
+17.2.script.js
+let countdown = 100;
+while (countdown > 0) {
+  countdown--;
+  if (countdown === 0) {
+   console.log("bomb disarmed");
+  }
+}
+
+
+           18.msg printed and why.
+var lemein = "0";
+var lemeout = 0;
+var msg = "";
+if (lemein) {
+  msg += "hi";
+}
+if (lemeout) {
+  msg += 'Hello';
+}
+console.log(msg);//output:hi
+
+
+
+18.1.In the first if statement, the string "0" is a truthy value, so the code inside the if block will be executed and the string "hi" will be added to the msg variable.
+
+18.2.In the second if statement, the number 0 is a falsy value, so the code inside the if block will not be executed. Therefore, the value of msg will remain as "hi".
+
+When console.log(msg) is called, it will print "hi".(The message printed will be "hi".)
+
+
+
+

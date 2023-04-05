@@ -1,0 +1,267 @@
+(https://medium.com/@reach2arunprakash/guvi-zen-simple-debugging-tasks-adcdc2d3249d)
+
+1.code to get the largest of three.
+
+aa = (f,s,t) => {
+ console.log(f,s,t);
+ if(f>s &&f>t){
+   console.log(f)}
+ else if(s>f && s>t){
+   console.log(s)}
+ else{
+   console.log(t)}
+}
+aa(1,2,3);
+
+Explanation of changes made:
+1.The original code had a syntax error on line 2 where f,s,t were redeclared as variables after they were already declared as parameters of the arrow function.
+2.To fix the error, remove the let keyword and just use the variables f, s, and t that were already declared as parameters.
+
+
+2.code to Sum of the digits present in the number.
+
+let n = 123;
+console.log(add(n));
+function add(n)
+{
+    let sum = 0;
+    n = n.toString();
+    for(var i=0; i<n.length; i++){
+        sum += parseInt(n[i]);
+    }
+    return sum;
+}
+
+Explanation of changes made:
+1.Initialized sum to 0 instead of 10.
+2.Converted the input n to a string using toString() method so that it can be iterated using a loop.
+3.Added parseInt() method to convert each character of the string to an integer before adding it to sum.
+
+
+3.code to Sum of all numbers using IIFE function.
+const arr = [9, 8, 5, 6, 4, 3, 2, 1];
+(function () {
+  let sum = 0;
+  for (var i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  console.log(sum);
+  return sum;
+})();
+
+Explanation of changes made:
+1.Removed the semicolon after the for loop declaration as it terminates the loop prematurely.
+2.Changed the condition of the for loop to run until i is less than arr.length instead of less than or equal to arr.length.
+
+
+4.code to gen Title caps.
+
+var arr = ["guvi", "geek", "zen", "fullstack"];
+
+function titleCaps(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    console.log(arr[i][0].toUpperCase() + arr[i].substr(1));
+  }
+}
+
+titleCaps(arr);
+
+Explanation of changes made:
+
+1.The array was not closed properly in the initial declaration. Fixed it by using double quotes instead of the fancy quotes.
+2.The function declaration was missing the argument. Fixed it by passing the array as an argument to the function.
+3.The substr method should start from index 1 instead of 0 to avoid the first letter being duplicated.
+4.The loop condition should be i < arr.length instead of i <= arr.length, to avoid going out of bounds.
+5.Removed the unnecessary variable declaration var ano.
+
+
+
+5.code to return the Prime numbers.
+
+const newArray = [1, 3, 2, 5, 10];
+const myPrime = newArray.filter(num => {
+  if (num < 2) {
+    return false;
+  }
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+});
+console.log(myPrime);//Output:[3, 2, 5]
+
+Explanation:
+code to return the prime numbers, we need to check if the number is greater than 1 and not divisible by any number other than 1 and itself.
+
+
+6.code to sum the number in that array.
+
+const num = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+const sumFunc = (a, b) => a + b;
+const sum = num.reduce(sumFunc);
+console.log(sum);//550
+
+Explanation of changes made:
+There are two variables with the same name 'sum' in the code which is causing an error. One is a function and the other is a constant variable. We need to change the name of one of the variables to fix the error.
+
+
+
+7.code to rotate an array by k times and return rotated array using IIFE function
+
+var arr = [1, 2, 3, 6, 8, 6, 1, 9, 10, 12, 13];
+var k = 3;
+
+(function() {
+  k = k % arr.length;
+  const out = arr.slice(k).concat(arr.slice(0, k));
+  console.log(out);
+})();
+
+Explanation of changes made:
+
+1.Added k = k % arr.length; to calculate k as remainder when divided by array length, so that k will always be less than the array length.
+2.Modified the code inside the IIFE to use the slice() method to extract the rotated sub-arrays and concatenate them together.
+
+
+
+8.code to gen Title caps.
+
+var arr = ['guvi', 'geek', 'zen', 'fullstack'];
+(function() {
+ for (var i = 0; i < arr.length; i++) {
+ console.log(arr[i][0].toUpperCase() + arr[i].substr(1));
+ }
+})();
+//output:Guvi
+Geek
+Zen
+Fullstack
+
+Explanation of changes made:
+1.The quotation marks used for strings are invalid. They should be changed to either single quotes or double quotes.
+2.In the console.log() statement, arr[0] should be changed to arr[i] to get the current element of the array in each iteration.
+
+
+9.All odd numbers in an array using IIFE function.
+
+var arr = [1, 2, 3, 5, 7, 79, 7, 2, 6, 9, 4];
+(function() {
+ for (var i = 0; i < arr.length; i++) {
+ if (arr[i] % 2 !== 0) {
+ console.log(arr[i]);
+ }}
+})();
+//output:1
+3
+5
+7
+79
+7
+9
+
+Explanation of changes made:
+To print all odd numbers in an array using an IIFE function, should change the condition in the if statement to check for odd numbers, not even numbers. 
+
+
+
+
+10. code to reverse.
+(function(str){
+    var str1 = str.split(" ").reverse().join(" ");
+    console.log(str1); 
+})("abcd");
+
+Explanation of changes made:
+This will split the input string into an array of words using space as the separator, reverse the order of the words, and then join them back together into a string with spaces in between. The output will be "dcba".
+
+
+
+11.remove duplicates.
+
+var res = function(arr){
+  var newArr = [];
+  for(var i=0; i < arr.length; i++){
+    if(newArr.indexOf(arr[i]) == -1) {
+      newArr.push(arr[i]);
+    }
+  }
+  console.log(newArr);
+}
+
+res(["guvi","geek","guvi","duplicate","geeK"]);//oUTPUT:["guvi", "geek", "duplicate", "geeK"]
+
+Explanation of changes made:
+The code is that the newArr is being re-initialized for each iteration. Also, the indexOf() function checks if the current element already exists in newArr or not, but it only checks for the first occurrence of that element in newArr. Therefore, it will not remove all duplicates.
+
+
+
+12.code to give the below expected output.
+Expected Output:
+[
+{firstName: “Vasanth”, lastName: “Raja”, age: 24, role: “JSWizard”},
+{firstName: “Sri”, lastName: “Devi”, age: 28, role: “Coder”}
+]
+
+
+code:
+var array = [  [    ["firstname","vasanth"],
+    ["lastname","Raja"],
+    ["age",24],
+    ["role","JSWizard"]
+  ],
+  [    ["firstname","Sri"],
+    ["lastname","Devi"],
+    ["age",28],
+    ["role","Coder"]
+  ]
+];
+
+var final = [];
+
+while(array.length !== 0) {
+  var outer_remove = array.shift();
+  var new_object = {};
+
+  while(outer_remove.length !== 0) {
+    var inner_remove = outer_remove.shift();
+    var key = inner_remove[0];
+    var value = inner_remove[1];
+    new_object[key] = value;
+  }
+  final.push(new_object);
+}
+
+console.log(final);
+
+
+
+13.Sum of odd numbers in an array
+
+var as=[12,34,5,6,2,56,6,2,1];
+var s=as.reduce(function(a,c){
+ if(c%2!=0)
+ {
+ return a+c;
+ }
+ return a;});
+console.log(s);//output:6
+//This is because the code is calculating the sum of all odd numbers in the array as, which are 5 and 1, resulting in a total sum of 6.
+
+
+
+14.Swap the odd and even digits.
+
+function swapDigits(str) {
+  let swapped = '';
+  for (let i = 0; i < str.length - 1; i += 2) {
+    swapped += str[i + 1] + str[i];
+  }
+  if (str.length % 2 !== 0) {
+    swapped += str[str.length - 1];
+  }
+  console.log(swapped);
+}
+
+swapDigits("1234");//output:2143
